@@ -43,8 +43,8 @@ app.config(($routeProvider, $locationProvider) => {
     templateUrl: 'partials/main.html'
   })
   .when('/route1', {
-    controller: 'rt1Ctrl',
-    templateUrl: 'partials/route1.html'
+    controller: 'SplashCtrl',
+    templateUrl: 'partials/splash.html'
   })
   .when('/route101', {
     controller: 'rt101Ctrl',
