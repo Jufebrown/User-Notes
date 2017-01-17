@@ -8,6 +8,18 @@ var config = {
 };
 firebase.initializeApp(config);
 
+firebase.auth().onAuthStateChanged(() => {
+  if (firebase.auth().currentUser !== null) {
+    var email = firebase.auth().currentUser.email
+    $('.main-page h1').text(`Welcome ${email}`)
+    $('.login-page').addClass('hidden')
+    $('.main-page').removeClass('hidden')
+  } else {
+    $('.login-page').removeClass('hidden')
+    $('.main-page').addClass('hidden')
+  }
+})
+
 var app = angular.module('notesApp', ['ngRoute'])
 
 app.config(($routeProvider, $locationProvider) => {
