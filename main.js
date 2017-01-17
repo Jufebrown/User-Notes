@@ -39,17 +39,26 @@ app.config(($routeProvider, $locationProvider) => {
   $locationProvider.hashPrefix('')
   $routeProvider
   .when('/', {
-    controller: 'MainCtrl',
-    templateUrl: 'partials/main.html'
-  })
-  .when('/route1', {
     controller: 'SplashCtrl',
     templateUrl: 'partials/splash.html'
   })
-  .when('/route101', {
-    controller: 'rt101Ctrl',
-    templateUrl: 'partials/route101.html'
+  .when('/login', {
+    controller: 'LoginCtrl',
+    templateUrl: 'partials/login.html'
   })
+  .when('/register', {
+    controller: 'RegisterCtrl',
+    templateUrl: 'partials/register.html'
+  })
+  .when('/notes', {
+    controller: 'NotesCtrl',
+    templateUrl: 'partials/notes.html'
+  })
+  .when('/new', {
+    controller: 'NewCtrl',
+    templateUrl: 'partials/new.html'
+  })
+  .otherwise({redirectTo:'/'});
 })
 
 app.controller('MainCtrl', function($scope) {
