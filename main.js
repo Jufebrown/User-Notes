@@ -1,0 +1,32 @@
+var app = angular.module('notesApp', ['ngRoute'])
+
+app.config(($routeProvider, $locationProvider) => {
+  $locationProvider.hashPrefix('')
+  $routeProvider
+  .when('/', {
+    controller: 'MainCtrl',
+    templateUrl: 'partials/main.html'
+  })
+  .when('/route1', {
+    controller: 'rt1Ctrl',
+    templateUrl: 'partials/route1.html'
+  })
+  .when('/route101', {
+    controller: 'rt101Ctrl',
+    templateUrl: 'partials/route101.html'
+  })
+})
+
+app.controller('MainCtrl', function($scope) {
+  $scope.potatoes = 'baked!'
+})
+
+app.controller('rt1Ctrl', function($scope) {
+  $scope.picAddress = "http://cdn.fishki.net/upload/post/201407/18/1286305/004.jpg"
+  $scope.highwayName = 'US Route 1'
+})
+
+app.controller('rt101Ctrl', function($scope) {
+  $scope.picAddress = "http://cdn.newsday.com/polopoly_fs/1.10666555.1437659497!/httpImage/image.JPG_gen/derivatives/display_960/image.JPG"
+  $scope.highwayName = 'US Route 101'
+})
