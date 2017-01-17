@@ -22,7 +22,6 @@ firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(() => {
   if (firebase.auth().currentUser !== null) {
     var email = firebase.auth().currentUser.email
-    $('.main-page h1').text(`Welcome ${email}`)
     $('.login-page').addClass('hidden')
     $('.main-page').removeClass('hidden')
   } else {
