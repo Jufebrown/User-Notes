@@ -1,4 +1,15 @@
-// Initialize Firebase
+/*************************************************
+variable declaration
+*************************************************/
+
+const app = angular.module('notesApp', ['ngRoute'])
+
+
+
+/*************************************************
+Initialize Firebase
+*************************************************/
+
 var config = {
   apiKey: "AIzaSyBZDzD-r0dDyfjqypYbUgXKmebAGKzFhwk",
   authDomain: "user-notes-74f00.firebaseapp.com",
@@ -20,8 +31,11 @@ firebase.auth().onAuthStateChanged(() => {
   }
 })
 
-var app = angular.module('notesApp', ['ngRoute'])
 
+
+/*************************************************
+angular
+*************************************************/
 app.config(($routeProvider, $locationProvider) => {
   $locationProvider.hashPrefix('')
   $routeProvider
