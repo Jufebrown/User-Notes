@@ -1,6 +1,6 @@
-<form ng-submit="register()">
+<form ng-submit="register(credentials)">
   <h3>New user registration:</h3>
-  <input type="email" name="userEmail" placeholder="you@example.com" ng-model='userEmail'>
-  <input type="password" name="userPass" placeholder="password" ng-model='userPass'>
-  <button type="submit" ng-submit="register()">Register</button>
+  <input type="email" name="userEmail" placeholder="you@example.com" ng-model='credentials.email' ng-required="true">
+  <input type="password" name="userPass" placeholder="password" ng-model='credentials.password' ng-required="true" ng-minlength="6">
+  <button type="submit">Register</button>
 </form>
