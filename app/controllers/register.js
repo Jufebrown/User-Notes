@@ -1,13 +1,28 @@
-app.controller('rt1Ctrl', function($scope, Auth) {
-  $scope.register = (credentials) => {
-    firebase.auth().createUserWithEmailAndPassword(credentials.email, credentials.password).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      alert(errorMessage)
-    })
-    .then(() => {
-    })
+app.controller("RegisterCtrl", ["$scope", "Auth",
+  function($scope, Auth) {
+    $scope.createUser = function() {
+      $scope.message = null;
+      $scope.error = null;
+
+      // Create a new user
+      Auth.$createUserWithEmailAndPassword($scope.email, $scope.password)
+        .then(function(firebaseUser) {
+          $scope.message = "User created with uid: " + firebaseUser.uid;
+        }).catch(function(error) {
+          $scope.error = error;
+        });
+    };
+
+    $scope.deleteUser = function() {
+      $scope.message = null;
+      $scope.error = null;
+
+      // Delete the currently signed-in user
+      Auth.$deleteUser().then(function() {
+        $scope.message = "User deleted";
+      }).catch(function(error) {
+        $scope.error = error;
+      });
+    };
   }
-})
+]);
