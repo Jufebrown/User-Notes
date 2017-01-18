@@ -1,4 +1,4 @@
-app.controller('rt1Ctrl', function($scope) {
+app.controller('rt1Ctrl', function($scope, Auth) {
   $scope.login = (credentials) => {
     firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password).catch(function(error) {
       // Handle Errors here.
