@@ -35,6 +35,8 @@ firebase.auth().onAuthStateChanged(() => {
 /*************************************************
 angular
 *************************************************/
+
+// routing
 app.config(($routeProvider, $locationProvider) => {
   $locationProvider.hashPrefix('')
   $routeProvider
@@ -61,6 +63,7 @@ app.config(($routeProvider, $locationProvider) => {
   .otherwise({redirectTo:'/'});
 })
 
+// controllers
 app.controller('MainCtrl', function($scope) {
   $scope.potatoes = 'baked!'
 })
