@@ -25,3 +25,8 @@ firebase.auth().onAuthStateChanged(() => {
     $('.main-page').addClass('hidden')
   }
 })
+
+// //sign-out button
+// $('.sign-out').click(()=>{
+//   firebase.auth().signOut()
+// })
