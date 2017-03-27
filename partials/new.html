@@ -1,4 +1,4 @@
-<form ng-submit="newNote()">
-  <label>Enter note: <input type="text" name="userNote"></label>
+<form ng-submit="submit()">
+  <label>Enter note: <input type="text" name="userNote" ng-model="newNote"></label>
   <button type="submit" class="noteSubmit">Save</button>
 </form>

@@ -1,4 +1,7 @@
-app.controller('NotesCtrl', function($scope) {
-  $scope.picAddress = "http://cdn.fishki.net/upload/post/201407/18/1286305/004.jpg"
-  $scope.highwayName = 'US Route 1'
+app.controller('NotesCtrl', function($scope, notesFactory) {
+  $scope.notes = notesFactory.getNotes()
+  .then((val) => {
+    console.log('val from listctrl', val)
+    $scope.list = val.list
+  })
 })
