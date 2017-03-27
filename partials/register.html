@@ -1,0 +1,9 @@
+<form ng-controller="RegisterCtrl">
+  <h3>New user registration:</h3>
+  <input type="email" name="userEmail" placeholder="you@example.com" ng-model='email' ng-required="true">
+  <input type="password" name="userPass" placeholder="password" ng-model='password' ng-required="true" ng-minlength="6">
+  <button ng-click="createUser()">Create User</button>
+  <button ng-click="deleteUser()">Delete User</button>
+  <p ng-if="message">Message: <strong>{{ message }}</strong></p>
+  <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+</form>

@@ -1,0 +1,6 @@
+<form ng-submit="login(credentials)">
+  <h3>Existing user login:</h3>
+  <input type="email" name="userEmail" placeholder="you@example.com" ng-model="credentials.email" ng-required="true">
+  <input type="password" name="userPass" placeholder="password" ng-model='credentials.password' ng-minlength="6" ng-required="true">
+  <button type="submit">Login</button>
+</form>
